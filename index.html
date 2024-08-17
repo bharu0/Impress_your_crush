@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('greygraph.jpg'); /* Background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        img {
+            max-width: 80%;
+            max-height: 80%;
+            cursor: pointer;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Image Container -->
+<img id="displayedImage" src="Drag the papers to move.jpg" alt="First Image">
+
+<script>
+    const images = [
+        'Drag the papers to move.jpg', 
+        'Your paragraph text.jpg',
+        'And my favorite person.jpg',
+        'How can be someone be so cute.jpg',
+        'How can be bestie 4ever.jpg',
+        'and I have fallen in love with you.jpg',
+        'Untitled design.jpg'
+    ];
+
+    let currentIndex = 0;
+
+    // Function to update the displayed image
+    function showNextImage() {
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 0; // Loop back to the first image
+        }
+        document.getElementById('displayedImage').src = images[currentIndex];
+    }
+
+    // Event listener for clicking the image
+    document.getElementById('displayedImage').addEventListener('click', showNextImage);
+</script>
+
+</body>
+</html>
